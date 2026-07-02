@@ -56,7 +56,8 @@ Fase akhir dari simulator ini memetakan objek pohon hierarki AST menjadi rangkai
 - Mekanisme Inkrementasi Otomatis: Baris operasi pembaruan nilai pencacah (i = i + 1) disisipkan secara otomatis oleh pembangkit TAC di baris terbawah blok FOR_BODY. Instruksi ditutup dengan perintah mutlak GOTO FOR_CHECK untuk memaksa program melompat kembali ke atas demi menguji ulang kondisi variabel.
 
 ## 3. Hasil Pengujian
-```=== INPUT SOURCE CODE (FOR LOOP) ===
+=== INPUT SOURCE CODE (FOR LOOP) ===
+```
 for ( i = 1 ; i < 5 ; i = i + 1 ) { hasil = hasil * 2 }
 
 --- TAHAP 1: ANALISIS LEKSIKAL (Tokenisasi For) ---
