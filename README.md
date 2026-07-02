@@ -7,14 +7,14 @@
 ```for ( i = 1 ; i < 5 ; i = i + 1 ) { hasil = hasil * 2 }```
 
 ### B. Pola Tata Bahasa - Backus-Naur Form (BNF)
-Aturan sintaksis formal yang mendasari pembentukan token dan penataan hierarki pohon ekspresi diatur lewat rumusan tata bahasa bebas konteks berikut: ```
-<for_stmt>    ::= "for" "(" <init> ";" <condition> ";" <step> ")" "{" <statements> "}"
-<init>        ::= <identifier> "=" <value>
-<condition>   ::= <identifier> <operator> <value>
-<step>        ::= <identifier> "=" <identifier> "+" <value>
-<statements>  ::= <identifier> "=" <identifier> "*" <value>
-<identifier>  ::= a | b | c | ... | z | ID
-<value>       ::= integer | digit```
+Aturan sintaksis formal yang mendasari pembentukan token dan penataan hierarki pohon ekspresi diatur lewat rumusan tata bahasa bebas konteks berikut:
+- <for_stmt>    ::= "for" "(" <init> ";" <condition> ";" <step> ")" "{" <statements> "}"
+- <init>        ::= <identifier> "=" <value>
+- <condition>   ::= <identifier> <operator> <value>
+- <step>        ::= <identifier> "=" <identifier> "+" <value>
+- <statements>  ::= <identifier> "=" <identifier> "*" <value>
+- <identifier>  ::= a | b | c | ... | z | ID
+- <value>       ::= integer | digit
 
 ## 2. Penjelasan Implementasi Tahapan Kompilasi
    Program simulator yang dibangun merepresentasikan empat fase krusial arsitektur kompilator modern secara sekuensial:
