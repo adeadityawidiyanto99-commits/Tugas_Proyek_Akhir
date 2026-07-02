@@ -1,6 +1,6 @@
 # Tugas_Proyek_Akhir
 
-##1. Konstruksi Sintaksis & Pola Tata Bahasa (Pattern/BNF)
+## 1. Konstruksi Sintaksis & Pola Tata Bahasa (Pattern/BNF)
   Konstruksi bahasa pemrograman yang dipilih untuk implementasi tugas akhir ini adalah struktur perulangan **For Loop**. Untuk membedakan karakteristik simulator ini dengan model perulangan standar lainnya, masukan (*source code*) yang digunakan melibatkan operasi penugasan kompleks serta operasi aritmetika perkalian pada bagian tubuh perulangan (*body loop*).
 
 ### A. Contoh Kode Sumber Input
@@ -16,7 +16,7 @@ Aturan sintaksis formal yang mendasari pembentukan token dan penataan hierarki p
 <identifier>  ::= a | b | c | ... | z | ID
 <value>       ::= integer | digit
 
-##2. Penjelasan Implementasi Tahapan Kompilasi
+## 2. Penjelasan Implementasi Tahapan Kompilasi
    Program simulator yang dibangun merepresentasikan empat fase krusial arsitektur kompilator modern secara sekuensial:
 
 ### A. Analisis Leksikal (Lexer / Tokenizer)
@@ -43,7 +43,7 @@ Analisis semantik bertugas menguji makna kontekstual operan dalam struktur progr
 
 - Penanganan Galat Semantik: Jika kode sumber menggunakan pengenal eksternal yang belum dideklarasikan di dalam alokasi tabel memori awal program, sistem secara reaktif akan melempar interupsi kesalahan makna berupa NameError (Semantic Error: Undefined Variable), sehingga mencegah pembentukan instruksi TAC ilegal.
 
-D. Pembangkitan Kode Antara (Intermediate Code Generation / TAC)
+### D. Pembangkitan Kode Antara (Intermediate Code Generation / TAC)
 Fase akhir dari simulator ini memetakan objek pohon hierarki AST menjadi rangkaian instruksi linear tiga alamat atau Three-Address Code (TAC) yang ramah terhadap arsitektur perangkat keras komputer. Karena pola dasar for bersifat perulangan kondisional bertingkat, TAC dikonstruksikan menggunakan struktur lompatan berbasis GOTO logis dengan rancangan label pelompat unik:
 - Eksekusi Awal (Initialization Line): Baris penugasan awal (i = 1) dijalankan tepat satu kali di bagian luar, sebelum blok pemeriksaan loop aktif.
 
@@ -53,7 +53,7 @@ Fase akhir dari simulator ini memetakan objek pohon hierarki AST menjadi rangkai
 
 - Mekanisme Inkrementasi Otomatis: Baris operasi pembaruan nilai pencacah (i = i + 1) disisipkan secara otomatis oleh pembangkit TAC di baris terbawah blok FOR_BODY. Instruksi ditutup dengan perintah mutlak GOTO FOR_CHECK untuk memaksa program melompat kembali ke atas demi menguji ulang kondisi variabel.
 
-##3. Hasil Pengujian
+## 3. Hasil Pengujian
 ```=== INPUT SOURCE CODE (FOR LOOP) ===
 for ( i = 1 ; i < 5 ; i = i + 1 ) { hasil = hasil * 2 }
 
